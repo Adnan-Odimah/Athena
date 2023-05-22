@@ -76,6 +76,8 @@ class Alarm:
         """Checks if the user requested to stop the alarm"""
         # IF audio detected == stop:
 
+        # TODO: Finish stop check
+
         self.stop_current()
 
     def snooze_current(self):
