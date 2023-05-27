@@ -34,7 +34,6 @@ class Timer(Alarm.Alarm):
             self.audio_process = multiprocessing.Process(target=self.play_audio)
             self.audio_process.start()
 
-            # TODO: Replace with Stop Check
             self.stop_check()
 
     def snooze_check(self):
