@@ -9,4 +9,3 @@ if __name__ == "__main__":
     Timer.Timer(
         "", "test", datetime.datetime.now() + datetime.timedelta(seconds=3), "Ish", ""
     )
-    # BUG: NO AUDIO

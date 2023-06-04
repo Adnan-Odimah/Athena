@@ -45,6 +45,7 @@ class AudioListener:
             # TODO: PROCESS request
             print(request)
             if "mute yourself" in request:
+                # M
                 print("muted")
                 self.mode = 3
 
