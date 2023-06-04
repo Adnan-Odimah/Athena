@@ -12,10 +12,13 @@ class MusicPlayer:
     Client ID and secret ID for the developer app created
     """
 
+    # TODO: ADD SPOTIFY FUNCTIONALITY
+
     def __init__(self) -> None:
         pass
 
     def play_youtube(self, query):
+        # TODO: MAKE ASYNC
         """Downloads a song from youtube that matches the query, plays it then deletes it"""
         with youtube_dl.YoutubeDL() as ydl:
             os.chdir(
