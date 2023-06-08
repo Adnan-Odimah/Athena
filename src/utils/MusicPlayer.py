@@ -15,20 +15,27 @@ class MusicPlayer:
     # TODO: ADD SPOTIFY FUNCTIONALITY
 
     def __init__(self) -> None:
-        pass
+        self.ydl_opts = {
+            "format": "bestaudio/best",
+            "postprocessors": [
+                {
+                    "key": "FFmpegExtractAudio",
+                    "preferredcodec": "mp3",
+                    "preferredquality": "192",
+                }
+            ],
+            "ffmpeg_location": "C:\\Windows\\YOUTUBE_DL",
+        }
 
-    def play_youtube(self, query):
+    def play_yt(self, query):
         # TODO: MAKE ASYNC
         """Downloads a song from youtube that matches the query, plays it then deletes it"""
-        with youtube_dl.YoutubeDL() as ydl:
+        with youtube_dl.YoutubeDL(self.ydl_opts) as ydl:
             os.chdir(
                 "C:/Users/adnan/Dropbox/Coding Projects/Python/AI/Athena/extras/CachedMusic"
             )
             info = ydl.extract_info(f"ytsearch:{query}")
-            file_name = f"{info.get('entries')[0]['title']} [{info.get('entries')[0]['id']}].mp4"
+            file_name = f"{info.get('entries')[0]['title']} [{info.get('entries')[0]['id']}].mp3"
 
             playsound.playsound(file_name)
             os.remove(file_name)
-
-
-MusicPlayer().play_youtube("Hello by Adele")
