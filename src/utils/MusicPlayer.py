@@ -31,4 +31,4 @@ class MusicPlayer:
             os.remove(file_name)
 
 
-MusicPlayer().play_youtube("Hello by Adele")
+MusicPlayer().play_youtube("Calm down by selena gomez")
